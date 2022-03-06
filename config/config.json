@@ -1,0 +1,73 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "property-pane-advanced-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/propertyPaneAdvanced/PropertyPaneAdvancedWebPart.js",
+          "manifest": "./src/webparts/propertyPaneAdvanced/PropertyPaneAdvancedWebPart.manifest.json"
+        }
+      ]
+    },
+    "cascading-dropdown-demo-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/cascadingDropdownDemo/CascadingDropdownDemoWebPart.js",
+          "manifest": "./src/webparts/cascadingDropdownDemo/CascadingDropdownDemoWebPart.manifest.json"
+        }
+      ]
+    },
+    "dynamic-property-pane-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/dynamicPropertyPane/DynamicPropertyPaneWebPart.js",
+          "manifest": "./src/webparts/dynamicPropertyPane/DynamicPropertyPaneWebPart.manifest.json"
+        }
+      ]
+    },
+    "accordian-property-pane-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/accordianPropertyPane/AccordianPropertyPaneWebPart.js",
+          "manifest": "./src/webparts/accordianPropertyPane/AccordianPropertyPaneWebPart.manifest.json"
+        }
+      ]
+    },
+    "steps-property-pane-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/stepsPropertyPane/StepsPropertyPaneWebPart.js",
+          "manifest": "./src/webparts/stepsPropertyPane/StepsPropertyPaneWebPart.manifest.json"
+        }
+      ]
+    },
+    "show-icon-image-in-pane-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/showIconImageInPane/ShowIconImageInPaneWebPart.js",
+          "manifest": "./src/webparts/showIconImageInPane/ShowIconImageInPaneWebPart.manifest.json"
+        }
+      ]
+    },
+    "property-pane-loading-indicator-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/propertyPaneLoadingIndicator/PropertyPaneLoadingIndicatorWebPart.js",
+          "manifest": "./src/webparts/propertyPaneLoadingIndicator/PropertyPaneLoadingIndicatorWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "PropertyPaneAdvancedWebPartStrings": "lib/webparts/propertyPaneAdvanced/loc/{locale}.js",
+    "CascadingDropdownDemoWebPartStrings": "lib/webparts/cascadingDropdownDemo/loc/{locale}.js",
+    "PropertyControlStrings": "node_modules/@pnp/spfx-property-controls/lib/loc/{locale}.js",
+    "DynamicPropertyPaneWebPartStrings": "lib/webparts/dynamicPropertyPane/loc/{locale}.js",
+    "AccordianPropertyPaneWebPartStrings": "lib/webparts/accordianPropertyPane/loc/{locale}.js",
+    "StepsPropertyPaneWebPartStrings": "lib/webparts/stepsPropertyPane/loc/{locale}.js",
+    "ShowIconImageInPaneWebPartStrings": "lib/webparts/showIconImageInPane/loc/{locale}.js",
+    "PropertyPaneLoadingIndicatorWebPartStrings": "lib/webparts/propertyPaneLoadingIndicator/loc/{locale}.js"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "property-pane-advanced-client-side-solution",
+    "id": "23f0d50e-2492-4a86-8d06-8082eea74bad",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.14.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "property-pane-advanced description"
+      },
+      "longDescription": {
+        "default": "property-pane-advanced description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "property-pane-advanced Feature",
+        "description": "The feature that activates elements of the property-pane-advanced solution.",
+        "id": "7aaa5625-3d65-46ee-9b36-da68e040a52d",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/property-pane-advanced.sppkg"
+  }
+}
