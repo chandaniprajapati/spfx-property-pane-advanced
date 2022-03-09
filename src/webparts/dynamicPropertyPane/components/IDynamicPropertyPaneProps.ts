@@ -1,3 +1,5 @@
+import { PropertyFieldFilePicker, IPropertyFieldFilePickerProps, IFilePickerResult } from "@pnp/spfx-property-controls/lib/PropertyFieldFilePicker";
+
 export interface IDynamicPropertyPaneProps {
   description: string;
   isDarkTheme: boolean;
@@ -6,5 +8,5 @@ export interface IDynamicPropertyPaneProps {
   userDisplayName: string;
   textOrImageType: string;
   simpleText: string;
-  imageUrl: string;
+  filePickerResult: IFilePickerResult;
 }

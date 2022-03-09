@@ -3,8 +3,10 @@ import * as ReactDom from 'react-dom';
 import { Version } from '@microsoft/sp-core-library';
 import {
   IPropertyPaneConfiguration,
-  PropertyPaneTextField
+  PropertyPaneTextField,
+  PropertyPaneDropdown
 } from '@microsoft/sp-property-pane';
+
 import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
 import { IReadonlyTheme } from '@microsoft/sp-component-base';
 
@@ -84,7 +86,7 @@ export default class AccordianPropertyPaneWebPart extends BaseClientSideWebPart<
           groups: [
             {
               groupName: "Group 1",
-              isCollapsed: true,
+              isCollapsed: false,
               groupFields: [
                 PropertyPaneTextField('demoProperty1', {
                   label: "Property 1"

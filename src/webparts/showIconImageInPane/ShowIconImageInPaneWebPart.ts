@@ -96,13 +96,11 @@ export default class ShowIconImageInPaneWebPart extends BaseClientSideWebPart<IS
                     {
                       key: 'Column',
                       text: 'Column chart',
-                      selectedImageSrc: imgBarChart,
                       imageSrc: imgBarChart,
                     },
                     {
                       key: 'Pie',
                       text: 'Pie chart',
-                      selectedImageSrc: imgPieChart,
                       imageSrc: imgPieChart,
                     }
                   ]

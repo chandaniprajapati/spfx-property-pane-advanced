@@ -8,7 +8,7 @@ import {
 } from '@microsoft/sp-property-pane';
 import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
 import { IReadonlyTheme } from '@microsoft/sp-component-base';
-
+import { PropertyFieldFilePicker, IPropertyFieldFilePickerProps, IFilePickerResult } from "@pnp/spfx-property-controls/lib/PropertyFieldFilePicker";
 import * as strings from 'DynamicPropertyPaneWebPartStrings';
 import DynamicPropertyPane from './components/DynamicPropertyPane';
 import { IDynamicPropertyPaneProps } from './components/IDynamicPropertyPaneProps';
@@ -17,7 +17,7 @@ export interface IDynamicPropertyPaneWebPartProps {
   description: string;
   textOrImageType: string;
   simpleText: string;
-  imageUrl: string;
+  filePickerResult: IFilePickerResult;
 }
 
 export default class DynamicPropertyPaneWebPart extends BaseClientSideWebPart<IDynamicPropertyPaneWebPartProps> {
@@ -42,7 +42,7 @@ export default class DynamicPropertyPaneWebPart extends BaseClientSideWebPart<ID
         userDisplayName: this.context.pageContext.user.displayName,
         textOrImageType: this.properties.textOrImageType,
         simpleText: this.properties.simpleText,
-        imageUrl: this.properties.imageUrl,
+        filePickerResult: this.properties.filePickerResult,
       }
     );
 
@@ -82,8 +82,8 @@ export default class DynamicPropertyPaneWebPart extends BaseClientSideWebPart<ID
 
   protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
 
-    let textControl: any = [];
-    let imageSourceControl: any = [];
+    let textControl: any ;
+    let imageSourceControl: any;
 
     if (this.properties.textOrImageType === "Text") {
       textControl = PropertyPaneTextField('simpleText', {
@@ -92,10 +92,17 @@ export default class DynamicPropertyPaneWebPart extends BaseClientSideWebPart<ID
       });
     }
     else {
-      imageSourceControl = PropertyPaneTextField('imageUrl', {
-        label: "Image URL",
-        placeholder: "Enter Image URL"
-      });
+      imageSourceControl = PropertyFieldFilePicker('filePicker', {
+        context: this.context as any,
+        filePickerResult: this.properties.filePickerResult,
+        onPropertyChange: this.onPropertyPaneFieldChanged.bind(this),
+        properties: this.properties,
+        onSave: (e: IFilePickerResult) => { console.log(e); this.properties.filePickerResult = e; },
+        onChanged: (e: IFilePickerResult) => { console.log(e); this.properties.filePickerResult = e; },
+        key: "filePickerId",
+        buttonLabel: "File Picker",
+        label: "File Picker",
+      })
     }
 
     return {
